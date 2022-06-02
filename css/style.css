@@ -35,6 +35,14 @@ li{
 .center{
     text-align: center;
 }
+.ti-star{
+    color: #1485fe ;
+    font-weight: 600 !important;
+}
+.ti-time, .ti-calendar{
+    opacity: 0.8 ;
+    color: #fff;
+}
 /* hiệu ứng của border */
 .animation-boder:after{
     content: '';
@@ -207,6 +215,7 @@ li{
     transition: .6s all;
 }
 .header-down .subnav{
+    z-index: 3 !important;
     display: none;
     position: absolute;
     top: 34.1px;
@@ -253,8 +262,30 @@ li{
     border-top: 2px solid rgba(255,255,255,0.2);
 } */
 
+.content{
+    margin-top: 70px;
+}
+.content .row{
+    display: inline-block;
+    /* background-color: rgba(255,255,255,0.2); */
+    width: 72%;
+    height: 100%;
+    /* border-radius: 5px; */
+    /* float: left; */
+    margin-left: 10px;
+}
+.content .col{
+    display: inline-block;
+    /* float: right; */
+    background-color: rgba(255,255,255,0.2);
+    /* width: 25%; */
+    height: 100%;
+    border-radius: 5px;
+    margin-left: 12px;
+} 
+
 .slideshow-container {
-    width: 820px;
+    width: 100%;
     height: 350px;
     position: relative;
  
@@ -316,10 +347,6 @@ li{
   .text .info .description{
       padding:16px 0;
   }
-  .text .info i{
-      padding-right: 2px;
-      color:#1485fe
-  }
   .text .info span{
       font-weight: 600;
   }
@@ -377,32 +404,10 @@ li{
     animation-name: fade;
     animation-duration: 1.5s;
   }
-.content{
-    margin-top: 70px;
-    /* display: inline-block; */
-    width: 100%;
-    height: 500px;
-    /* float:left; */
-}
-.content .row{
-    /* display: inline-block; */
-    /* background-color: rgba(32, 184, 113, 0.7); */
-    width: 73%;
-    /* height: 500px; */
-    float: left;
-}
-.content .col{
-    /* margin-top: 50px; */
-    /* display: inline-block; */
-    float: left;
-    background-color: rgba(255,255,255,0.2);
-    width: 27%;
-    border-radius: 5px;
-} 
+
 .col .hot{
-    color:#fff;
-    margin: 10px 0;
-    
+    color:#ffffff;
+    margin: 8px 0;
 }
 .col a{
     text-decoration: none;
@@ -422,20 +427,40 @@ li{
 }
 .col .movie{
     position: relative;
+    padding-left: 65px;
+    height: 90px;
+    /* top: 4px; */
+    margin-top:12px;
+    margin-bottom: 16px;
 }
 .col .movie .top{
     position: absolute;
     top:0;
-    left: 0x;
+    left:0;
     padding: 5px;
     background-color: #1485fe;
+    z-index: 1;
+    border-top-left-radius: 5px;
 }
-.col .movie img{
+.col .movie .image{
+    position: absolute;
+    top:0;
+    left:0;
+}
+.col .movie .image img{
+    border-radius: 5px;
     width: 70px;
     height: 90px;
 }
 .col .movie .title{
-    display: inline-block;
+    margin-left: 12px;
+    padding-bottom: 5px;
+}
+.col .movie .info{
+    margin-left: 12px;
+}
+.col .movie .info i{
+    padding-right: 6px;
 }
 .footer{
     height: 10000px;
