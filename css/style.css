@@ -18,13 +18,16 @@ html{
     font-family: Arial, Helvetica, sans-serif !important;
     scroll-behavior: smooth; /*hanh dong cuon */
     overflow-x: hidden;
-    background-color: #161619;
+    /* background-color: #161619; */
 }
 /* chung */
 .main{
     margin: 0 12%;
     /* overflow-x: hidden; */
     /* background-color: rgba(108, 108, 108, 0.07); */
+}
+.clear{
+    clear: both; /* gỡ lỗi float*/
 }
 li{
     list-style-type: none;
@@ -623,9 +626,55 @@ border-radius: 50%;
     line-height: 1.6;
 }
 .footer{
-    height: 10000px;
+    display: inline-block;
     width: 100%;
+    /* padding: 10px;   */
+    background-color: rgba(0, 0, 0, .4);
+    color: #fff;
+    padding-top: 16px;
+    height: 70px;
+}
+.footer-logo, .yeu-cau, .chat, .thuat-ngu, .icon i{
+    float: left;
+    /* display: inline-block; */
     
+    margin: 0 20px;
+    line-height: 40px;
+}
+.yeu-cau:hover, .chat:hover, .thuat-ngu:hover{
+    transform: scale(1.1);
+    
+}
+.yeu-cau:hover a, .chat:hover a, .thuat-ngu:hover a{
+    color:rgb(43, 255, 0);
+}
+.icon{
+    margin-right: 30px;
+}
+.footer i{
+    float: right;
+    font-size: 30px;
+}
+.footer i:hover{
+    transform: scale(1.2);
+    line-height: 1 !important;
+}
+.footer .ti-facebook:hover,.footer .ti-twitter-alt:hover{
+    /* background-color: #1485fe; */
+    color: #fff;
+    color: #1485fe;
+    border-radius: 5px ;
+    /* padding: 2px; */
+    
+}
+.footer .ti-youtube:hover{
+    background-color: red;
+    border-radius: 5px;
+}
+.footer .ti-instagram:hover{
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    border-radius: 5px;
 }
 /* .li-hide{
     margin-inline-start: 0px;
