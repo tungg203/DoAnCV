@@ -29,6 +29,10 @@ html{
 li{
     list-style-type: none;
 }
+a{
+    text-decoration: none;
+    color: #fff;
+}
 .clear{
     clear: both; /* gỡ lỗi float*/
 }
@@ -42,6 +46,12 @@ li{
 .ti-time, .ti-calendar{
     opacity: 0.8 ;
     color: #fff;
+}
+.ti-control-play{
+    color: rgb(43, 255, 0);
+    /* color: #fff; */
+    font-size: 50px;
+    animation: ti-control-play_Animation ease 0.4s;
 }
 /* hiệu ứng của border */
 .animation-boder:after{
@@ -278,7 +288,7 @@ li{
 .content .col{
     /* display: inline-block; */
     float: right;
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(255,255,255,0.1);
     width: 26.5%;
     /* height: 100%; */
     border-radius: 5px;
@@ -477,8 +487,6 @@ li{
 }
 .col .movie .image:hover i{
     display: block;
-    
-    animation: ti-control-play_Animation ease 0.4s;
 }
 .col .movie .title{
     margin-left: 12px;
@@ -493,13 +501,131 @@ li{
 }
 .row .movie-list{
     width: 100%;
-    height: 500px;
+    height: 100%;
     background-color: rgba(255,255,255,0.2);
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
+.movie-list .classname{
+    -webkit-transform: skew(-20deg);
+    -moz-transform: skew(-20deg);
+    -o-transform: skew(-20deg);
+    line-height: 2.5;
+    text-transform: uppercase;
+    color: #7797b3;
+    font-weight: 700;
+    background-color: rgba(0, 0, 0, .75);
+    margin: 0 10px;
+    /* margin-top: 50px !important; */
+    margin-bottom: 10px;
+    width: 200px;
+    text-align: center;
+}
+.movie-list .m-class li{
+    width: 25%;
+    float: left;
+    
+}
+.movie-list .m-class .image{
+    /* height: 260px; */
+    position: relative;
+    margin: 5px;
+    object-fit: cover;
+    height: 260px;
+    overflow: hidden;
+}
+.movie-list .m-class img{
+    /* width: 190px; */
+    width: 100%;
+    height: 260px;
+    /* height: 100%; */
+    /* padding: 5px; */
+    border-radius: 13px;
+    object-fit: cover;
+    align-items: center;
+    transition: all 0.3s;
+}
+.movie-list .m-class img:hover{
+    opacity: .8;
+    /* transform: scale(1.2); */
+    /* transition: .5s all; */
+    align-items: center;
+}
+.movie-list .m-class .image .ti-star{
+    position: absolute;
+    top:5px;
+    left: 5px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, .65);
+}
+.movie-list .m-class .image span{
+position:absolute;
+top:5px;
+right: 5px;
+z-index: 2;
+color: #fff;
+background: rgba(183,28,28,.9);
+padding: 5px 5px 20px 10px;
+font-size: 13px;
+border-radius: 50%;
+}
+.movie-list .m-class .image span p{
+    font-size: 16px;
+}
+
+.movie-list .m-class .image p{
+    position: absolute;
+}
+.movie-list .m-class .image .title p{
+    width: 100%;
+    background-color: rgba(0, 0, 0, .65);
+    color: #fff;
+    padding: 5px 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+    position: absolute;
+    bottom: 0;
+    line-height: 2;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.movie-list .m-class .image .ti-control-play{
+    font-size: 50px;
+    position: absolute;
+    top:35%;
+    left: 35%;
+    padding: 10px;
+    padding-right: 7px;
+    background-color: rgba(0, 0, 0, .4);
+    border-radius: 50%;
+    cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAqxJREFUSEu1lVtIE1AYx39TR+uGuoYaRJBZ5m2KOi0Vm5tTh2mWYGSoC7SiIkNwS7uBRIoZXaV8SEwfur6YiIG4CTEwStDNHiJEMSmsnGFQhJqxqWC5W8G+t3PO//v/ON853zkC7MQqmXo8Ky93Y/vDJ/cw64/Y07g7J1ghlKYV+5/X39fFw0hvO02H81Zq3HUH7ADk5WgN160eVb5GanNSPAc4sdpIY74HATmzRjo0HgTIpo28Ou5BQPAnI6OtF02ZuTk7nrd3DM0P9sQRqQxkqGfC3XN2esiS90aKMmKYYi2pvpOUa0ottY03xC96DDxqbg2B+d0IBB8x67scAQVEK4oQB7XiLYKJMSmCWcXSLRIOG5nZmmzLlUrA1NvN+lgVLSoozMymrfMZ01MWSvMP1GM26OxBBMgP/iBsp4jkU3D30C+mP1QsAXhnhG0LAFssjhOD4OXNSgQFV6hLBt1e5Sgm/Rb7gIQ9U8Qq/Ug5DcN98LS6Bp3+wnLDvwG28WMtFNQjFoGlxhlAqrhDguoY8jMLPvWKL2j1Ers1Xb6jRcBCjjOAXO6DOGaGrHOwZgO0HAVNk+tL4jbAapW0/yvxWb4klMGbbohQuQYsVzjdge2KpF0mIaOK1Erw8v43c5clsgqiUvwJTbSQXgnrAj0AsFrGZ8+RnOeFrNRDgOi0CuLSr6Ko/g+AYgSTIdh+HyzNRmSKiYyeJFEDAWH/BqlXNmDSVzoHWFfj1J+RZUhsTedu9D2A24UOP6U/F6KV2wmRviVcBaFq14jZn3BN3cig4aQjsZ3XVHGWqKRL7CoDv82OIXMzcGvfOK87raJ59wG2vlCWELCpGbXWi8DwlbnmLuhqaMOkL3Fmbk10/qFHKerwERYTmuqPUOTF2MA3psYHEE7n0t//3XUN4TfmSu0Z389RXwAAAABJRU5ErkJggg==) 6 1, auto;
+    display: none;
+    
+}
+.movie-list .m-class .image:hover .ti-control-play{
+    display: block;
+}
+.movie-list .more{
+    display: block;
+}
+.movie-list .more:hover{
+    opacity: .7;
+
+}
+.movie-list .more a{
+    font-family: sans-serif;
+    font-size: 20px;
+    line-height: 1.6;
 }
 .footer{
     height: 10000px;
     width: 100%;
-   
+    
 }
 /* .li-hide{
     margin-inline-start: 0px;
